@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A1000010000000000000001 /* WizclipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000010000000000000001 /* WizclipApp.swift */; };
+		8A1000020000000000000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000020000000000000002 /* AppState.swift */; };
+		8A1000030000000000000003 /* ClipboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000030000000000000003 /* ClipboardItem.swift */; };
+		8A1000040000000000000004 /* ClipboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000040000000000000004 /* ClipboardStore.swift */; };
+		8A1000050000000000000005 /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000050000000000000005 /* ClipboardMonitor.swift */; };
+		8A1000060000000000000006 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000060000000000000006 /* HotkeyManager.swift */; };
+		8A1000070000000000000007 /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000070000000000000007 /* PasteService.swift */; };
+		8A1000080000000000000008 /* HistoryPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000080000000000000008 /* HistoryPanelController.swift */; };
+		8A1000090000000000000009 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000090000000000000009 /* HistoryView.swift */; };
+		8A10000A000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A20000A000000000000000A /* Assets.xcassets */; };
+		8A10000B000000000000000B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20000B000000000000000B /* Carbon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A2000010000000000000001 /* WizclipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizclipApp.swift; sourceTree = "<group>"; };
+		8A2000020000000000000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8A2000030000000000000003 /* ClipboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItem.swift; sourceTree = "<group>"; };
+		8A2000040000000000000004 /* ClipboardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStore.swift; sourceTree = "<group>"; };
+		8A2000050000000000000005 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
+		8A2000060000000000000006 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		8A2000070000000000000007 /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
+		8A2000080000000000000008 /* HistoryPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPanelController.swift; sourceTree = "<group>"; };
+		8A2000090000000000000009 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		8A20000A000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A20000B000000000000000B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		8A20000C000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A3000010000000000000001 /* Wizclip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wizclip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A4000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A10000B000000000000000B /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A5000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				8A5000020000000000000002 /* Wizclip */,
+				8A5000030000000000000003 /* Frameworks */,
+				8A5000040000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A5000020000000000000002 /* Wizclip */ = {
+			isa = PBXGroup;
+			children = (
+				8A2000010000000000000001 /* WizclipApp.swift */,
+				8A2000020000000000000002 /* AppState.swift */,
+				8A2000030000000000000003 /* ClipboardItem.swift */,
+				8A2000040000000000000004 /* ClipboardStore.swift */,
+				8A2000050000000000000005 /* ClipboardMonitor.swift */,
+				8A2000060000000000000006 /* HotkeyManager.swift */,
+				8A2000070000000000000007 /* PasteService.swift */,
+				8A2000080000000000000008 /* HistoryPanelController.swift */,
+				8A2000090000000000000009 /* HistoryView.swift */,
+				8A20000A000000000000000A /* Assets.xcassets */,
+				8A20000C000000000000000C /* Info.plist */,
+			);
+			path = Wizclip;
+			sourceTree = "<group>";
+		};
+		8A5000030000000000000003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A20000B000000000000000B /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A5000040000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3000010000000000000001 /* Wizclip.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A6000010000000000000001 /* Wizclip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A8000030000000000000003 /* Build configuration list for PBXNativeTarget "Wizclip" */;
+			buildPhases = (
+				8A4000020000000000000002 /* Sources */,
+				8A4000010000000000000001 /* Frameworks */,
+				8A4000030000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wizclip;
+			productName = Wizclip;
+			productReference = 8A3000010000000000000001 /* Wizclip.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A7000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8A6000010000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 8A8000010000000000000001 /* Build configuration list for PBXProject "Wizclip" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A5000010000000000000001;
+			productRefGroup = 8A5000040000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A6000010000000000000001 /* Wizclip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A4000030000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A10000A000000000000000A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A4000020000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1000010000000000000001 /* WizclipApp.swift in Sources */,
+				8A1000020000000000000002 /* AppState.swift in Sources */,
+				8A1000030000000000000003 /* ClipboardItem.swift in Sources */,
+				8A1000040000000000000004 /* ClipboardStore.swift in Sources */,
+				8A1000050000000000000005 /* ClipboardMonitor.swift in Sources */,
+				8A1000060000000000000006 /* HotkeyManager.swift in Sources */,
+				8A1000070000000000000007 /* PasteService.swift in Sources */,
+				8A1000080000000000000008 /* HistoryPanelController.swift in Sources */,
+				8A1000090000000000000009 /* HistoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A9000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A9000020000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		8A9000030000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Wizclip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizclip;
+				PRODUCT_NAME = Wizclip;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A9000040000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Wizclip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizclip;
+				PRODUCT_NAME = Wizclip;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A8000010000000000000001 /* Build configuration list for PBXProject "Wizclip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9000010000000000000001 /* Debug */,
+				8A9000020000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A8000030000000000000003 /* Build configuration list for PBXNativeTarget "Wizclip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9000030000000000000003 /* Debug */,
+				8A9000040000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A7000010000000000000001 /* Project object */;
+}
