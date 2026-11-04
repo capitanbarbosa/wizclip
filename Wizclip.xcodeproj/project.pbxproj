@@ -16,9 +16,9 @@
 		8A1000070000000000000007 /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000070000000000000007 /* PasteService.swift */; };
 		8A1000080000000000000008 /* HistoryPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000080000000000000008 /* HistoryPanelController.swift */; };
 		8A1000090000000000000009 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2000090000000000000009 /* HistoryView.swift */; };
-		8A10000C000000000000000C /* ShortcutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20000D000000000000000D /* ShortcutSettings.swift */; };
 		8A10000A000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A20000A000000000000000A /* Assets.xcassets */; };
 		8A10000B000000000000000B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20000B000000000000000B /* Carbon.framework */; };
+		8A10000C000000000000000C /* ShortcutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20000D000000000000000D /* ShortcutSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +31,11 @@
 		8A2000070000000000000007 /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
 		8A2000080000000000000008 /* HistoryPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPanelController.swift; sourceTree = "<group>"; };
 		8A2000090000000000000009 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		8A20000D000000000000000D /* ShortcutSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSettings.swift; sourceTree = "<group>"; };
 		8A20000A000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A20000B000000000000000B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		8A20000C000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A3000010000000000000001 /* Wizclip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wizclip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A20000D000000000000000D /* ShortcutSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSettings.swift; sourceTree = "<group>"; };
+		8A3000010000000000000001 /* Wizclip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wizclip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,13 +218,25 @@
 		8A9000030000000000000003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WPAZBTWVRW;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Wizclip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -243,13 +255,25 @@
 		8A9000040000000000000004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WPAZBTWVRW;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Wizclip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
