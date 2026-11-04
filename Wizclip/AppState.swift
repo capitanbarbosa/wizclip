@@ -10,6 +10,12 @@ final class AppState {
     var selectedID: UUID?
     var isPanelVisible = false
     var launchesAtLogin = SMAppService.mainApp.status == .enabled
+    var hotkey = Hotkey.load()
+    var isRecordingHotkey = false
+    var hotkeyRecordingHint: String?
+    var hotkeyError: String?
+
+    private var recordingGeneration = 0
 
     let store = ClipboardStore.shared
     let monitor = ClipboardMonitor()
@@ -40,10 +46,78 @@ final class AppState {
         }
         monitor.start()
         HotkeyManager.shared.onHotkey = { [weak self] in
-            self?.togglePanel()
+            guard let self, !self.isRecordingHotkey else { return }
+            self.togglePanel()
         }
-        HotkeyManager.shared.register()
+        if !HotkeyManager.shared.register(hotkey) {
+            hotkeyError = "Couldn’t register \(hotkey.displayString)."
+        }
         watchForegroundApp()
+    }
+
+    func beginRecordingHotkey() {
+        guard !isRecordingHotkey else { return }
+        recordingGeneration += 1
+        let generation = recordingGeneration
+        isRecordingHotkey = true
+        hotkeyRecordingHint = "Esc to cancel"
+        hotkeyError = nil
+        HotkeyRecorder.start { [weak self] event in
+            self?.handleRecordedEvent(event, generation: generation)
+        }
+    }
+
+    func cancelRecordingHotkey() {
+        guard isRecordingHotkey else { return }
+        endRecording()
+    }
+
+    func resetHotkey() {
+        if isRecordingHotkey {
+            endRecording()
+        }
+        applyHotkey(.defaultShortcut)
+    }
+
+    private func handleRecordedEvent(_ event: NSEvent, generation: Int) {
+        guard isRecordingHotkey, recordingGeneration == generation else { return }
+        if event.type == .flagsChanged {
+            let flags = event.modifierFlags.intersection([.command, .shift, .option, .control])
+            hotkeyRecordingHint = flags.isEmpty ? "Esc to cancel" : Hotkey.modifierSymbols(flags: flags) + "…"
+            return
+        }
+
+        switch Hotkey.capture(event) {
+        case .ignore:
+            break
+        case .cancel:
+            cancelRecordingHotkey()
+        case .needsModifier:
+            hotkeyRecordingHint = "Include ⌘, ⌥, or ⌃"
+        case .captured(let recorded):
+            endRecording()
+            applyHotkey(recorded)
+        }
+    }
+
+    private func endRecording() {
+        recordingGeneration += 1
+        isRecordingHotkey = false
+        hotkeyRecordingHint = nil
+        HotkeyRecorder.stop()
+    }
+
+    private func applyHotkey(_ newValue: Hotkey) {
+        if HotkeyManager.shared.register(newValue) {
+            hotkey = newValue
+            newValue.save()
+            hotkeyError = nil
+        } else {
+            hotkeyError = "That shortcut is unavailable."
+            if !HotkeyManager.shared.register(hotkey) {
+                hotkeyError = "Couldn’t register \(hotkey.displayString)."
+            }
+        }
     }
 
     func ingest(_ item: ClipboardItem) {

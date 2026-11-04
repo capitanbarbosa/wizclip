@@ -12,11 +12,14 @@ final class HistoryPanelController: NSObject, NSWindowDelegate {
 
     private var panel: NSPanel?
     private weak var state: AppState?
+    private var isTrackingMenu = false
+    private var menuObservers: [NSObjectProtocol] = []
 
     private let panelSize = NSSize(width: 420, height: 560)
 
     func show(state: AppState) {
         self.state = state
+        observeMenusIfNeeded()
         let panel = panel ?? makePanel(state: state)
         self.panel = panel
         position(panel)
@@ -29,7 +32,38 @@ final class HistoryPanelController: NSObject, NSWindowDelegate {
     }
 
     func windowDidResignKey(_ notification: Notification) {
-        state?.hidePanel()
+        DispatchQueue.main.async { [weak self] in
+            guard let self, let panel = self.panel, panel.isVisible, !self.isTrackingMenu else { return }
+            self.state?.hidePanel()
+        }
+    }
+
+    private func observeMenusIfNeeded() {
+        guard menuObservers.isEmpty else { return }
+        let center = NotificationCenter.default
+        menuObservers.append(center.addObserver(
+            forName: NSMenu.didBeginTrackingNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                self?.isTrackingMenu = true
+            }
+        })
+        menuObservers.append(center.addObserver(
+            forName: NSMenu.didEndTrackingNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                guard let self else { return }
+                self.isTrackingMenu = false
+                DispatchQueue.main.async {
+                    guard let panel = self.panel, panel.isVisible, !panel.isKeyWindow, !self.isTrackingMenu else { return }
+                    self.state?.hidePanel()
+                }
+            }
+        })
     }
 
     func windowWillClose(_ notification: Notification) {

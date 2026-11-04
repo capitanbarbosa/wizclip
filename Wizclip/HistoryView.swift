@@ -51,9 +51,7 @@ struct HistoryView: View {
             Text(countLabel)
                 .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(.secondary)
-            if chrome == .popover {
-                overflowMenu
-            }
+            overflowMenu
         }
         .padding(.bottom, 12)
     }
@@ -65,6 +63,10 @@ struct HistoryView: View {
             }
             Button("Allow Auto-Paste…") {
                 state.requestPastePermissionIfNeeded()
+            }
+            Divider()
+            Button("Keyboard Shortcut (\(state.hotkey.displayString))…") {
+                ShortcutSettingsController.shared.show(state: state)
             }
             Divider()
             Button("Clear History", role: .destructive) {
@@ -178,9 +180,16 @@ struct HistoryView: View {
             hint("⌫", "delete")
             hint("esc", "close")
             Spacer()
-            Text("⌘⇧V")
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundStyle(.secondary)
+            Button {
+                ShortcutSettingsController.shared.show(state: state)
+            } label: {
+                Text(state.hotkey.displayString)
+                    .font(.system(size: 11, weight: .medium, design: .rounded))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+            .buttonStyle(.plain)
+            .help("Change keyboard shortcut")
         }
         .padding(.top, 8)
     }
@@ -242,6 +251,9 @@ enum HistoryKeyMonitor {
 
     @MainActor
     private static func handle(_ event: NSEvent, state: AppState) -> NSEvent? {
+        if state.isRecordingHotkey {
+            return event
+        }
         switch event.keyCode {
         case 125:
             state.selectNext()
